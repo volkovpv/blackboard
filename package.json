@@ -1,0 +1,22 @@
+{
+  "name": "blackboard",
+  "version": "0.0.1",
+  "description": "Blackboard with the schedule. Native javascript.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkovpv/blackboard.git"
+  },
+  "author": "volkov_p_v",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/volkovpv/blackboard/issues"
+  },
+  "homepage": "https://github.com/volkovpv/blackboard#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}

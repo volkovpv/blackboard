@@ -49,3 +49,5 @@ crashlytics-build.properties
 
 #project
 /node_modules
+/www
+*.log

@@ -1,0 +1,50 @@
+{
+  "pupils": [
+    {
+      "firstName": "Ваня",
+      "lastName": "Петров",
+      "password": "123456ddddd",
+      "role": "PUPIL"
+    },
+    {
+      "firstName": "Саша",
+      "lastName": "Иванов",
+      "password": "123456",
+      "role": "PUPIL"
+    },
+    {
+      "firstName": "Кристина",
+      "lastName": "Сидорова",
+      "password": "777999",
+      "role": "PUPIL"
+    }
+  ],
+  "teachers": [
+    {
+      "firstName": "Клавдия Петровна",
+      "lastName": "Емельяненко",
+      "password": "von1941",
+      "role": "TEACHER"
+    },
+    {
+      "firstName": "Георгий Петрович",
+      "lastName": "Рахманин",
+      "password": "rahma777",
+      "role": "TEACHER"
+    },
+    {
+      "firstName": "Иван Иванович",
+      "lastName": "Сидоренко",
+      "password": "444777000",
+      "role": "TEACHER"
+    }
+  ],
+  "headTeacher": [
+    {
+      "firstName": "Анастасия Сергеевна",
+      "lastName": "Соколова",
+      "password": "sokol777",
+      "role": "HT"
+    }
+  ]
+}

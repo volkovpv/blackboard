@@ -1,31 +1,51 @@
-var main = require('../src/js/main');
+var login = require('../src/js/controller/login'),
+    config = require('../src/config');
 
 
-describe("запуск", function() {
+describe("Authorization", function() {
 
     beforeEach(function() {
-        var div = document.createElement("h1");
-        div.id  = 'textHeader';
-        document.body.appendChild(div);
+
     });
 
-  //We shall contemplate truth by testing reality, via spec expectations.
-  it("первый", function() {
-      document.body.innerHTML = __html__['www/index.html'];
+      it("loginTrue", function() {
+          document.body.innerHTML = __html__['www/index.html'];
 
-      var myEl = document.getElementById('textHeader');
-      expect(myEl.innerHTML).toEqual('"Вася"');
-      expect(main(6)).toEqual(9);
+          var myEl = document.getElementById('textHeader');
 
 
-      //jasmine.clock().install();
-      //var dummyElement = ;
-      //document.getElementById = jasmine.createSpy('textHeader').and.returnValue(dummyElement);
-      //
-      //jasmine.clock().tick(1002);
-      //expect(document.getElementById("textHeader").innerHTML).toEqual('14');
-      //jasmine.clock().uninstall();
+          var data = {
+              login: config.pupils[0].email,
+              password: config.pupils[0].password
+          };
 
-  });
+          var authorization = login(data);
+          expect(authorization.success).toBe(true);
+          expect(authorization.role).toEqual(config.pupils[0].role);
+          expect(authorization.firstName).toEqual(config.pupils[0].firstName);
+          expect(authorization.lastName).toEqual(config.pupils[0].lastName);
+          //expect(myEl.innerHTML).toEqual('"Вася"');
+
+      });
+
+
+    it("loginFalse", function() {
+        document.body.innerHTML = __html__['www/index.html'];
+
+        var myEl = document.getElementById('textHeader');
+
+
+        var data = {
+            login: "",
+            password: ""
+        };
+
+        var authorization = login(data);
+        expect(authorization.success).toBe(false);
+        //expect(myEl.innerHTML).toEqual('"Вася"');
+
+
+
+    });
 
 });

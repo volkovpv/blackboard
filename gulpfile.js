@@ -31,10 +31,17 @@ gulp.task('build_js', function(){
 
 //copy html
 gulp.task('copy_html', function(){
-    gulp.src('./src/*.html')
+    gulp.src('./src/**/*.html')
         .pipe(gulp.dest('./www/'));
 });
 
+//copy fonts
+gulp.task('copy_fonts', function(){
+    gulp.src('./src/style/fonts/**')
+        .pipe(gulp.dest('./www/fonts/'));
+});
+
+//sass
 gulp.task('sass', function () {
     return gulp.src('./src/style/style.scss')
         .pipe(sourcemaps.init())
@@ -43,10 +50,10 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./www/style'));
 });
 
-gulp.task('watch', ['build_js', 'copy_html', 'sass'], function() {
+gulp.task('watch', ['build_js', 'copy_html', 'sass', 'copy_fonts'], function() {
     liveReload({ start: true });
 
-    gulp.watch('./src/*.html', ['copy_html']);
+    gulp.watch('./src/**/*.html', ['copy_html']);
     gulp.watch('./src/style/**', ['sass']);
     gulp.watch('./src/js/**', ['build_js']);
 

@@ -11,13 +11,14 @@ module.exports = function(config) {
       require('karma-jasmine'),
       require('karma-phantomjs-launcher'),
       require('karma-html2js-preprocessor'),
-      require('karma-browserify')
+      require('karma-browserify'),
+      require('karma-source-map-support')
     ],
 
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify', 'jasmine'],
+    frameworks: ['browserify', 'jasmine', 'source-map-support'],
 
 
     // list of files / patterns to load in the browser

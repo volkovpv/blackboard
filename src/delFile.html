@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Удаляем файл</title>
+</head>
+<body>
+<p id="dellFile" style="cursor: pointer">удалить файл</p>
+<script>
+    window.requestFileSystem  = window.requestFileSystem || window.webkitRequestFileSystem;
+
+    function removeFs(fs){
+        var self = this;
+        fs.root.getDirectory('data', { }, function(directory){
+
+            directory.getFile('data.json', { }, function(fileEntry) {
+                fileEntry.remove(function() {
+                    alert('File removed.');
+                }, errorHandler);
+            }, errorHandler);
+
+        });
+    }
+
+    function errorHandler(e){
+        var msg = '';
+        switch (e.code) {
+            case FileError.QUOTA_EXCEEDED_ERR:
+                msg = 'QUOTA_EXCEEDED_ERR';
+                break;
+            case FileError.NOT_FOUND_ERR:
+                msg = 'NOT_FOUND_ERR';
+                break;
+            case FileError.SECURITY_ERR:
+                msg = 'SECURITY_ERR';
+                break;
+            case FileError.INVALID_MODIFICATION_ERR:
+                msg = 'INVALID_MODIFICATION_ERR';
+                break;
+            case FileError.INVALID_STATE_ERR:
+                msg = 'INVALID_STATE_ERR';
+                break;
+            default:
+                msg = 'Unknown Error';
+                break;
+        }
+        console.log('Error: ' + msg);
+    }
+
+    document.getElementById('dellFile').onclick = function(){
+        window.requestFileSystem(PERSISTENT, 5*1024*1024, removeFs, errorHandler);
+    };
+</script>
+
+</body>
+</html>

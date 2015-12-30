@@ -4,18 +4,21 @@
       "firstName": "Ваня",
       "lastName": "Петров",
       "password": "123456ddddd",
+      "email": "petrov@blackboard.ru",
       "role": "PUPIL"
     },
     {
       "firstName": "Саша",
       "lastName": "Иванов",
       "password": "123456",
+      "email": "ivanov@blackboard.ru",
       "role": "PUPIL"
     },
     {
       "firstName": "Кристина",
       "lastName": "Сидорова",
       "password": "777999",
+      "email": "sodorov777@blackboard.ru",
       "role": "PUPIL"
     }
   ],
@@ -24,19 +27,25 @@
       "firstName": "Клавдия Петровна",
       "lastName": "Емельяненко",
       "password": "von1941",
-      "role": "TEACHER"
+      "email": "emeli1941@blackboard.ru",
+      "role": "TEACHER",
+      "nameClass": "3а"
     },
     {
       "firstName": "Георгий Петрович",
       "lastName": "Рахманин",
       "password": "rahma777",
-      "role": "TEACHER"
+      "email": "rahma777@blackboard.ru",
+      "role": "TEACHER",
+      "nameClass": "1б"
     },
     {
       "firstName": "Иван Иванович",
       "lastName": "Сидоренко",
       "password": "444777000",
-      "role": "TEACHER"
+      "email": "sidorenko@blackboard.ru",
+      "role": "TEACHER",
+      "nameClass": "1в"
     }
   ],
   "headTeacher": [
@@ -44,6 +53,7 @@
       "firstName": "Анастасия Сергеевна",
       "lastName": "Соколова",
       "password": "sokol777",
+      "email": "sokol@blackboard.ru",
       "role": "HT"
     }
   ]

@@ -12,6 +12,8 @@ var objectData = {
         nameDirectory: 'data',
         nameFile: 'data.json'
     },
+
+    getDataTwo: {},
     
     _errorHandler: function(e){
         var msg = '';
@@ -47,6 +49,19 @@ var objectData = {
                 var lengthArrFile = results.length;
                 for(var i = 0; i < lengthArrFile; i++){
                     if(results[i].name === objectData._files.nameFile){
+                        directory.getFile(objectData._files.nameFile, { }, function(file) {
+
+                            file.file(function(file){
+                                var reader = new FileReader();
+                                var txtArea;
+                                reader.onloadend = function(e) {
+                                    txtArea = reader.result;
+                                    objectData._thisGetData(txtArea);
+                                };
+                                reader.readAsText(file);
+                            });
+
+                        }, self._errorHandler);
                         return
                     }
                 }
@@ -128,9 +143,9 @@ var objectData = {
     },
 
     _thisGetData: function(getData){
-        alert(getData);
+        //alert(getData);
         this.getDataTwo = JSON.parse(getData);
-        var kkk = this.getDataTwo;
+        //var kkk = this.getDataTwo;
     },
 
     _writerData: function(){
@@ -140,11 +155,13 @@ var objectData = {
     
     instFile: function(){
         var self = this;
-        navigator.webkitPersistentStorage.requestQuota(5*1024*1024, function(grantedBytes) {
-            window.requestFileSystem(PERSISTENT, grantedBytes, self._onInitFs, self._errorHandler);
-        }, function(e) {
-            console.log('Error', e);
-        });
+        if(navigator.webkitPersistentStorage){
+            navigator.webkitPersistentStorage.requestQuota(5*1024*1024, function(grantedBytes) {
+                window.requestFileSystem(PERSISTENT, grantedBytes, self._onInitFs, self._errorHandler);
+            }, function(e) {
+                console.log('Error', e);
+            });
+        }
     },
 
     reWriterData: function(){
@@ -156,9 +173,8 @@ var objectData = {
     getData: function(){
         var self = this;
         window.requestFileSystem(PERSISTENT, 5*1024*1024, self._getInitFs, self._errorHandler);
-    },
+    }
 
-    getDataTwo: {}
 };
 
 var UtilsData = function(){

@@ -6,7 +6,7 @@
 
 var config = require('../../config');
 
-var login = function login(data){
+var controllerLogin = function login(data){
     for (var item in config){
         var lengthItem = config[item].length;
         for(var i = 0; i < lengthItem; i++){
@@ -26,4 +26,4 @@ var login = function login(data){
     }
 };
 
-module.exports = login;
+module.exports = controllerLogin;

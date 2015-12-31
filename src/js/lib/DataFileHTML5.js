@@ -177,10 +177,10 @@ var objectData = {
 
 };
 
-var UtilsData = function(){
+var DataFileHTML5 = function(){
     this.instFile();
 };
 
-UtilsData.prototype = objectData;
+DataFileHTML5.prototype = objectData;
 
-module.exports = UtilsData;
+module.exports = DataFileHTML5;

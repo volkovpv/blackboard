@@ -26,7 +26,8 @@ module.exports = function(config) {
       path.dirname(require.resolve('jasmine-core')) + '/jasmine-core/jasmine.js',
         'www/*.html',
         'www/js/*.js',
-        '__test__/*.js'
+        '__test__/*.js',
+        '__test__/**/*.js'
     ],
 
 
@@ -39,7 +40,8 @@ module.exports = function(config) {
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
         'www/*.html': ['html2js'],
-      '__test__/*.js': [ 'browserify' ]
+      '__test__/*.js': [ 'browserify' ],
+      '__test__/**/*.js': [ 'browserify' ]
 
     },
 

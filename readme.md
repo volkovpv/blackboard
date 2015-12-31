@@ -27,6 +27,20 @@
 Выполнить задание необходимо на чистом JavaScript без использования сторонних библиотек и фреймворков.  
 Красота интерфейса не важна, важно удобство.  
   
+##Авторизация в интерфейсе  
+  
+###Завуч  
+- Логин: sokol@blackboard.ru  
+- Пароль: sokol777  
+  
+###Учитель  
+- Логин: sidorenko@blackboard.ru  
+- Пароль: 444777000  
+  
+###Ученик  
+- Логин: petrov@blackboard.ru  
+- Пароль: 123456ddddd  
+  
 =====================================
     
 #Start  
@@ -42,9 +56,10 @@
 - cd blackboard  
 - git clone https://github.com/volkovpv/blackboard.git  
 - npm install -g gulp  
+- npm install    
 - gulp watch  
   
-#Required support in your browser  
+###Required support in your browser  
 - **HTML5 Imports.** Чтобы сделать это, вы должны были открыть chrome://flags (экспериментальные возможности Chrome), включить флаг “Enable HTML Imports”, а затем перезапустить свой ​​Chrome.  
 - **HTML5 FileSystem.** 
 - **HTML5 LocalStorage.** 

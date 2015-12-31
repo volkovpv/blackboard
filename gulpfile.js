@@ -24,7 +24,6 @@ gulp.task('build_js', function(){
         .pipe(source("main.js"))
         .pipe(buffer())
         .pipe(sourcemaps.init({loadMaps: true}))
-        //.pipe(uglify())
         .pipe(sourcemaps.write('../source-map'))
         .pipe(gulp.dest('./www/js/'));
 });

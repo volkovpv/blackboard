@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "description": "Blackboard with the schedule. Native javascript.",
   "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/volkovpv/blackboard.git"
@@ -19,6 +16,7 @@
   "devDependencies": {
     "bootstrap-sass": "^3.3.6",
     "browserify": "^12.0.1",
+    "cpy": "^3.4.1",
     "gulp": "^3.9.0",
     "gulp-livereload": "^3.8.1",
     "gulp-sass": "^2.1.1",
@@ -32,9 +30,25 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-source-map-support": "^1.1.0",
     "node-sass": "^3.4.2",
+    "open": "0.0.5",
     "phantomjs": "^1.9.19",
-    "uglify": "^0.1.5",
+    "spa-server": "^0.1.0",
+    "uglifyjs": "^2.4.10",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "scripts": {
+    "prestart": "npm install && npm run build",
+
+    "build": "npm run build-css && npm run build-js && npm run build-font && npm run build-index-html && npm run build-html",
+    "build-css": "node-sass --include-path scss ./src/style/style.scss ./www/style/style.css",
+    "build-js": "browserify ./src/js/main.js | uglifyjs -mc > ./www/js/main.js",
+    "build-font": "cpy ./src/style/fonts/*  ./www/fonts/",
+    "build-index-html": "cpy ./src/index.html  ./www/",
+    "build-html": "cpy ./html/**/*.html  ../www/ --parents --cwd=src",
+
+    "start": "node server",
+
+    "test": "karma start karma.conf.js"
   }
 }

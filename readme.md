@@ -29,6 +29,22 @@
   
 =====================================
     
-#Для запуска необходимо
-
-- **Поддержка HTML5 Imports.** Чтобы сделать это, вы должны были открыть chrome://flags (экспериментальные возможности Chrome), включить флаг “Enable HTML Imports”, а затем перезапустить свой ​​Chrome.
+#Start  
+  
+##Prod start  
+- mkdir blackboard  
+- cd blackboard  
+- git clone https://github.com/volkovpv/blackboard.git  
+- npm start  
+  
+##Develop start  
+- mkdir blackboard  
+- cd blackboard  
+- git clone https://github.com/volkovpv/blackboard.git  
+- npm install -g gulp  
+- gulp watch  
+  
+#Required support in your browser  
+- **HTML5 Imports.** Чтобы сделать это, вы должны были открыть chrome://flags (экспериментальные возможности Chrome), включить флаг “Enable HTML Imports”, а затем перезапустить свой ​​Chrome.  
+- **HTML5 FileSystem.** 
+- **HTML5 LocalStorage.** 
